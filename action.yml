@@ -1,0 +1,11 @@
+name: "Animator"
+description: "Creates animations of pterm examples."
+author: "MarvinJWendt"
+branding:
+  icon: award
+  color: orange
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.myInput }}

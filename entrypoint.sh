@@ -71,6 +71,8 @@ do
     cd .. || exit
 done
 
+cd .. || exit
+
 echo "## Generating changelog..."
 go run github.com/git-chglog/git-chglog/cmd/git-chglog -o CHANGELOG.md
 

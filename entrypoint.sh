@@ -62,7 +62,7 @@ do
 
     asciinema rec ./animation_data.json -c "go run ."
     echo '[5, "o", "\r\nrestarting...\r\n"]' >> ./animation_data.json
-    svg-term --in ./animation_data.json --out ./animation.svg
+    svg-term --in ./animation_data.json --out ./animation.svg --window true --no-optimize
 
     echo "# $D" > README.md
     echo "" >> README.md

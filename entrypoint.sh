@@ -28,16 +28,11 @@ git config --global user.name "MarvinJWendt"
 echo "## Ignore workflow files (we may not touch them)"
 git update-index --assume-unchanged .github/workflows/*
 
-# Start release
-
 echo "## Getting git tags..."
 git fetch --tags
 
 echo "## Downloading go modules..."
 go get
-
-echo "## Installing dops..."
-go install
 
 echo "## Installing svg-term..."
 npm install -g svg-term-cli

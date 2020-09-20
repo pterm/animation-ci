@@ -37,36 +37,8 @@ go get
 echo "## Installing svg-term..."
 npm install -g svg-term-cli
 
-echo "## Generating animations..."
-echo "Working in directoy $(pwd)"
-
-echo "Changing directory to '_examples'"
-cd _examples || exit
-echo "Now in: $(pwd)"
-echo ""
-echo "Processing all examples..."
-for D in `find .  -mindepth 1 -maxdepth 1 -type d -printf "%f\n"`
-do
-    echo "Switching to direcory $D"
-    cd "$D" || exit
-
-    echo "  Processing $(pwd)..."
-
-    rm ./animation_data.json || true
-    rm ./animation.svg || true
-
-    asciinema rec ./animation_data.json -c "go run ."
-    echo '[5, "o", "\r\nrestarting...\r\n"]' >> ./animation_data.json
-    svg-term --in ./animation_data.json --out ./animation.svg --window true --no-optimize
-
-    echo "# $D" > README.md
-    echo "" >> README.md
-    echo "![Animation](animation.svg)" >> README.md
-    rm ./animation_data.json
-    cd .. || exit
-done
-
-cd .. || exit
+echo "# Running CI System"
+go run ./ci
 
 echo "## Generating changelog..."
 go run github.com/git-chglog/git-chglog/cmd/git-chglog -o CHANGELOG.md

@@ -52,6 +52,6 @@ go fmt ./...
 echo "## Staging changes..."
 git add .
 echo "## Commiting files..."
-git commit -m "docs: autoupdate" || true
+git commit -m "docs: autoupdate" || exit 0
 echo "## Pushing to $BRANCH"
-git push -u origin $BRANCH
+git push -u origin $BRANCH || exit 0

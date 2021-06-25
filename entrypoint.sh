@@ -41,7 +41,8 @@ echo "# Running CI System"
 go run ./ci
 
 echo "## Generating changelog..."
-go run github.com/git-chglog/git-chglog/cmd/git-chglog -o CHANGELOG.md
+go install github.com/git-chglog/git-chglog/cmd/git-chglog@latest
+git-chglog -o CHANGELOG.md
 
 echo "## Go mod tidy..."
 go mod tidy

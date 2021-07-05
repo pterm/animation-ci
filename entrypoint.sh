@@ -31,6 +31,9 @@ git update-index --assume-unchanged .github/workflows/*
 echo "## Getting git tags..."
 git fetch --tags
 
+echo "## Go env"
+go env
+
 echo "## Downloading go modules..."
 go get
 

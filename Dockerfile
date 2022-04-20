@@ -9,7 +9,6 @@ COPY entrypoint.sh /entrypoint.sh
 RUN apk add jq bash git go nodejs npm asciinema sudo
 RUN apk add --no-cache --upgrade grep
 RUN apk --no-cache add findutils
-RUN git config --global --add safe.directory /github/workspace
 
 # Start action
 ENTRYPOINT ["/entrypoint.sh"]

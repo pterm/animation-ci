@@ -4,6 +4,9 @@ set -e
 
 REPO_FULLNAME=$(jq -r ".repository.full_name" "$GITHUB_EVENT_PATH")
 
+echo "## Setup git"
+git config --global --add safe.directory /github/workspace
+
 echo "## Initializing git repo..."
 git init
 echo "### Adding git remote..."
